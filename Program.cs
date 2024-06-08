@@ -6,12 +6,12 @@ namespace StudentManagement
     class Student
     {
         // Поля для хранения данных
-        private string name;
-        private string patronymic;
-        private string surname;
+        private string? name;
+        private string? patronymic;
+        private string? surname;
         private DateTime birthDate;
-        private string address;
-        private string phone;
+        private string? address;
+        private string? phone;
 
         // Поля для хранения оценок
         private LinkedList<int> marks = new LinkedList<int>(); // Зачёты
@@ -26,7 +26,7 @@ namespace StudentManagement
         }
 
         // Конструктор с параметрами: имя, отчество, фамилия
-        public Student(string name, string patronymic, string surname) : this(name, patronymic, surname,  DateTime.MinValue, "Unknown", "Unknown")
+        public Student(string name, string patronymic, string surname) : this(name, patronymic, surname, DateTime.MinValue, "Unknown", "Unknown")
         {
             Console.WriteLine("Constructor with name, patronymic, surname");
         }
@@ -40,12 +40,12 @@ namespace StudentManagement
         // Основной конструктор с параметрами: имя, отчество, фамилия, дата рождения, адрес, телефон
         public Student(string name, string patronymic, string surname, DateTime birthDate, string address, string phone)
         {
-            this.name = name;
-            this.patronymic = patronymic;
-            this.surname = surname;
-            this.birthDate = birthDate;
-            this.address = address;
-            this.phone = phone;
+            SetName(name);
+            SetPatronymic(patronymic);
+            SetSurname(surname);
+            SetBirthDate(birthDate);
+            SetAddress(address);
+            SetPhone(phone);
             Console.WriteLine("Main constructor with all parameters");
         }
 
